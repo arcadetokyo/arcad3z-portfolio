@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pepper Piccio — Portfolio</title>
+  <link rel="stylesheet" href="./css/style.css" />
+</head>
+<body>
+
+  <canvas id="bgCanvas" class="bg-fx"></canvas>
+
+  <div class="page-loader" id="pageLoader">
+    <h1 class="page-loader__text" data-text="LAUNCH PAD">LAUNCH PAD</h1>
+  </div>
+
+  <!-- ===== HERO SECTION ===== -->
+  <header class="hero">
+    <h1 class="hero__title">LAUNCH PAD</h1>
+
+    <div class="hero__profile">
+      <div class="hero__portrait-wrap">
+        <img src="./assets/icons/selfportrait.png" alt="" class="hero__doodle" />
+        <span class="hero__blob"></span>
+        <img src="./assets/images/self.png" alt="Pepper Piccio" class="hero__photo" />
+      </div>
+
+      <div class="hero__info reveal">
+        <h2 class="hero__name">PEPPER PICCIO</h2>
+        <p class="hero__edu">
+          Bachelor of Science in Computer Science<br />
+          Mapua Malayan Colleges Mindanao
+        </p>
+
+        <ul class="hero__skills">
+          <li>Project Management</li>
+          <li>Web Development / UI/UX</li>
+          <li>Social Media Management</li>
+          <li>Design, Branding and Illustration</li>
+          <li>Digital Marketing / Content Creation</li>
+        </ul>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===== GET STARTED SECTION ===== -->
+  <section class="get-started" id="get-started">
+    <div class="get-started__top reveal">
+      <h2 class="get-started__title">get started.</h2>
+      <div class="get-started__dots">
+        <span class="dot dot--pink"></span>
+        <span class="dot dot--lilac"></span>
+        <span class="dot dot--navy"></span>
+      </div>
+    </div>
+
+    <nav class="get-started__grid">
+      <a href="./projects.html" class="get-started__item reveal">
+        <img src="./assets/icons/star.png" alt="" class="get-started__icon" />
+        <span>projects</span>
+      </a>
+      <a href="#skills" class="get-started__item reveal">
+        <img src="./assets/icons/spiral.png" alt="" class="get-started__icon" />
+        <span>skills and certifications</span>
+      </a>
+      <a href="#work" class="get-started__item reveal">
+        <img src="./assets/icons/flower.png" alt="" class="get-started__icon" />
+        <span>work</span>
+      </a>
+      <a href="#contact" class="get-started__item reveal">
+        <img src="./assets/icons/star2.png" alt="" class="get-started__icon" />
+        <span>contact me!</span>
+      </a>
+    </nav>
+  </section>
+
+  <script src="./js/script.js"></script>
+</body>
+</html>

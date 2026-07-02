@@ -7,6 +7,96 @@
   <link rel="stylesheet" href="./css/style.css" />
   <link rel="stylesheet" href="./css/work.css" />
   <link rel="stylesheet" href="./css/work-detail.css" />
+  <style>
+    /* CRITICAL OVERRIDES — inlined to guarantee they load */
+    .work-header {
+      position: relative !important;
+      min-height: 100vh !important;
+      padding: 4rem var(--section-padding-x) !important;
+      display: flex !important;
+      flex-direction: column !important;
+      justify-content: flex-start !important;
+      align-items: flex-start !important;
+    }
+
+
+    /* ===== WORK HEADER ===== */
+    .work-header {
+      position: relative;
+      min-height: 100vh;
+      padding: 4rem var(--section-padding-x);
+      display: flex;
+      flex-direction: column;
+    }
+    .work-title {
+      font-family: 'Inter', sans-serif;
+      font-weight: 900;
+      color: var(--navy);
+      font-size: clamp(4rem, 10vw, 7rem);
+      line-height: 0.95;
+      letter-spacing: -0.02em;
+      display: inline-block;
+      animation: idle-sway 5s ease-in-out infinite;
+    }
+    /* ===== NAV — horizontal row, bottom-right ===== */
+    .work-nav {
+      display: flex !important;
+      flex-direction: row !important;
+      gap: 3rem;
+      align-items: flex-end;
+      justify-content: flex-end;
+      margin-top: auto !important;
+      width: 100% !important;
+      padding-top: 0 !important;
+      grid-template-columns: unset !important;
+    }
+    .work-nav__item {
+      display: flex !important;
+      flex-direction: column !important;
+      align-items: center !important;
+      gap: 0.85rem !important;
+    }
+    .work-nav__icon {
+      width: 140px !important;
+      height: 140px !important;
+      object-fit: contain;
+      animation: idle-float 4.5s ease-in-out infinite;
+      
+    }
+    .work-nav__item:nth-child(1) .work-nav__icon { animation-delay: 0s; }
+    .work-nav__item:nth-child(2) .work-nav__icon { animation-delay: 0.6s; }
+    .work-nav__item:nth-child(3) .work-nav__icon { animation-delay: 1.2s; }
+    .work-nav__item:nth-child(4) .work-nav__icon { animation-delay: 1.8s; }
+    .work-nav__item:hover .work-nav__icon {
+      animation: gentle-wiggle 0.9s cubic-bezier(0.34, 1.2, 0.4, 1) forwards;
+      filter: drop-shadow(0 20px 28px rgba(180, 180, 180, 0.6));
+    }
+    .work-nav__item span {
+      font-family: 'Inter', sans-serif;
+      font-weight: 700;
+      color: var(--navy);
+      font-size: 1rem;
+      text-align: center;
+      padding: 0.5rem 1.2rem;
+      border-radius: 999px;
+      transition: background-color 0.35s ease, color 0.35s ease, transform 0.3s ease;
+    }
+    .work-nav__item:hover span {
+      background-color: var(--navy);
+      color: var(--cream);
+      transform: translateY(-2px);
+    }
+    @media (max-width: 768px) {
+      .work-nav {
+        flex-wrap: wrap !important;
+        justify-content: center !important;
+        gap: 2rem;
+        margin-top: 3rem;
+      }
+      .work-nav__icon { width: 90px; height: 90px; }
+    }
+
+  </style>
 </head>
 <body>
 
@@ -16,7 +106,7 @@
     <h1 class="page-loader__text" data-text="WORK.">WORK.</h1>
   </div>
 
-  <!-- ===== HEADER: title left, nav right ===== -->
+  <!-- ===== HEADER: title top-left, nav bottom-right ===== -->
   <header class="work-header" id="work-top">
     <h1 class="work-title reveal">work.</h1>
 
@@ -47,23 +137,31 @@
   <section class="wd-section wd-section--dark" id="design" data-theme="dark">
     <div class="wd-section__info">
       <h2 class="wd-section__title">design and visual work</h2>
-      <p class="wd-section__desc">A collection of layout, visual design, and branding work spanning digital and print media. Add your description here.</p>
+      <p class="wd-section__desc">A mix of visual design, commissions, and social media layouts across digital and print, exploring different styles for both clients and personal work. ☆</p>
+      </div>
     </div>
     <div class="wd-gallery" data-gallery="design">
       <div class="wd-gallery__track">
         <div class="wd-slide" data-index="0"><img src="./projects/layouts/des1.jpg" alt="" class="wd-img" /></div>
         <div class="wd-slide" data-index="1"><img src="./projects/layouts/des2.jpg" alt="" class="wd-img" /></div>
-        <div class="wd-slide" data-index="2"><img src="./projects/layouts/des3.PNG" alt="" class="wd-img" /></div>
-        <div class="wd-slide" data-index="3"><img src="./projects/layouts/des4.png" alt="" class="wd-img" /></div>
+        <div class="wd-slide" data-index="2"><img src="./projects/layouts/des3.jpg" alt="" class="wd-img" /></div>
+        <div class="wd-slide" data-index="3"><img src="./projects/layouts/des4.PNG" alt="" class="wd-img" /></div>
         <div class="wd-slide" data-index="4"><img src="./projects/layouts/des5.png" alt="" class="wd-img" /></div>
         <div class="wd-slide" data-index="5"><img src="./projects/layouts/des6.PNG" alt="" class="wd-img" /></div>
         <div class="wd-slide" data-index="6"><img src="./projects/layouts/des7.PNG" alt="" class="wd-img" /></div>
         <div class="wd-slide" data-index="7"><img src="./projects/layouts/des8.PNG" alt="" class="wd-img" /></div>
         <div class="wd-slide" data-index="8"><img src="./projects/layouts/des9.JPG" alt="" class="wd-img" /></div>
         <div class="wd-slide" data-index="9"><img src="./projects/layouts/des10.JPG" alt="" class="wd-img" /></div>
-        <div class="wd-slide" data-index="10"><img src="./projects/layouts/des11.PNG" alt="" class="wd-img" /></div>
         <div class="wd-slide" data-index="11"><img src="./projects/layouts/des12.PNG" alt="" class="wd-img" /></div>
         <div class="wd-slide" data-index="12"><img src="./projects/layouts/des14.PNG" alt="" class="wd-img" /></div>
+        <div class="wd-slide" data-index="12"><img src="./projects/layouts/des15.png" alt="" class="wd-img" /></div>
+        <div class="wd-slide" data-index="12"><img src="./projects/layouts/des16.png" alt="" class="wd-img" /></div>
+        <div class="wd-slide" data-index="12"><img src="./projects/layouts/des17.PNG" alt="" class="wd-img" /></div>
+        <div class="wd-slide" data-index="12"><img src="./projects/layouts/des18.png" alt="" class="wd-img" /></div>
+
+
+
+
       </div>
       <button class="wd-gallery__btn wd-gallery__btn--prev">&#10094;</button>
       <button class="wd-gallery__btn wd-gallery__btn--next">&#10095;</button>
@@ -74,14 +172,25 @@
   <!-- ===== BRANDING ===== -->
   <section class="wd-section wd-section--light" id="branding" data-theme="light">
     <div class="wd-section__info">
-      <h2 class="wd-section__title">branding</h2>
-      <p class="wd-section__desc">Brand identity, logo design, and visual systems. Add your description here.</p>
-    </div>
+  <h2 class="wd-section__title">branding</h2>
+  <p class="wd-section__desc"><strong> wonkystudios · 2026 · Canada</strong><br><br>
+    Created the brand identity, logo, visual system, and tone of voice, establishing a cohesive brand presence across digital and print touchpoints.</p>
+</div>
     <div class="wd-gallery" data-gallery="branding">
       <div class="wd-gallery__track">
-        <div class="wd-slide" data-index="0"><div class="wd-img wd-placeholder wd-placeholder--light">placeholder</div></div>
-        <div class="wd-slide" data-index="1"><div class="wd-img wd-placeholder wd-placeholder--light">placeholder</div></div>
-        <div class="wd-slide" data-index="2"><div class="wd-img wd-placeholder wd-placeholder--light">placeholder</div></div>
+        <div class="wd-slide" data-index="2"><img src="./projects/branding/brand1.png" alt="" class="wd-img" /></div>
+        <div class="wd-slide" data-index="2"><img src="./projects/branding/brand2.png" alt="" class="wd-img" /></div>
+        <div class="wd-slide" data-index="2"><img src="./projects/branding/brand3.png" alt="" class="wd-img" /></div>
+        <div class="wd-slide" data-index="2"><img src="./projects/branding/brand4.png" alt="" class="wd-img" /></div>
+        <div class="wd-slide" data-index="2"><img src="./projects/branding/brand5.png" alt="" class="wd-img" /></div>
+        <div class="wd-slide" data-index="2"><img src="./projects/branding/brand6.png" alt="" class="wd-img" /></div>
+        <div class="wd-slide" data-index="2"><img src="./projects/branding/brand7.png" alt="" class="wd-img" /></div>
+        <div class="wd-slide" data-index="2"><img src="./projects/branding/brand8.png" alt="" class="wd-img" /></div>
+        <div class="wd-slide" data-index="2"><img src="./projects/branding/brand9.png" alt="" class="wd-img" /></div>
+
+
+
+
       </div>
       <button class="wd-gallery__btn wd-gallery__btn--prev">&#10094;</button>
       <button class="wd-gallery__btn wd-gallery__btn--next">&#10095;</button>
@@ -93,7 +202,18 @@
   <section class="wd-section wd-section--dark" id="copywriting" data-theme="dark">
     <div class="wd-section__info">
       <h2 class="wd-section__title">copywriting</h2>
-      <p class="wd-section__desc">Social media copywriting for food and beverage clients including Huckleberry, Tola, Chiang Mai Superstar, and Dirty Sanchez. Add your description here.</p>
+      <p class="wd-section__desc">Media copywriting for brands with clients across food, lifestyle, creative, and service-based industries.</p>
+      <div class="rel-links">
+        <button class="rel-links__btn">relevant links ↗</button>
+        <div class="rel-links__panel">
+          <a href="https://www.instagram.com/huckleberry_davao/" class="rel-links__item" target="_blank" rel="noopener"><span>Huckleberry Southern Kitchen</span><span class="rel-links__arrow">↗</span></a>
+          <a href="https://www.instagram.com/tola_davao/" class="rel-links__item" target="_blank" rel="noopener"><span>Tola</span><span class="rel-links__arrow">↗</span></a>
+          <a href="https://www.instagram.com/chiangmai.superstar/" class="rel-links__item" target="_blank" rel="noopener"><span>Chiang Mai Superstar</span><span class="rel-links__arrow">↗</span></a>
+          <a href="https://www.instagram.com/hulmapotteryph/" class="rel-links__item" target="_blank" rel="noopener"><span>Hulma Pottery Studio</span><span class="rel-links__arrow">↗</span></a>
+          <a href="https://www.instagram.com/teamtruesocial/" class="rel-links__item" target="_blank" rel="noopener"><span>Team True Social</span><span class="rel-links__arrow">↗</span></a>
+
+        </div>
+      </div>
     </div>
     <div class="wd-gallery" data-gallery="copywriting">
       <div class="wd-gallery__track">
@@ -101,6 +221,10 @@
         <div class="wd-slide" data-index="1"><img src="./projects/copywriting/cw2.png" alt="" class="wd-img" /></div>
         <div class="wd-slide" data-index="2"><img src="./projects/copywriting/cw3.png" alt="" class="wd-img" /></div>
         <div class="wd-slide" data-index="3"><img src="./projects/copywriting/cw4.png" alt="" class="wd-img" /></div>
+        <div class="wd-slide" data-index="0"><img src="./projects/copywriting/cw5.png" alt="" class="wd-img" /></div>
+        <div class="wd-slide" data-index="0"><img src="./projects/copywriting/cw6.png" alt="" class="wd-img" /></div>
+
+
       </div>
       <button class="wd-gallery__btn wd-gallery__btn--prev">&#10094;</button>
       <button class="wd-gallery__btn wd-gallery__btn--next">&#10095;</button>
@@ -112,13 +236,26 @@
   <section class="wd-section wd-section--light" id="illustrations" data-theme="light">
     <div class="wd-section__info">
       <h2 class="wd-section__title">illustrations</h2>
-      <p class="wd-section__desc">Digital illustrations and visual art. @project.soda — add your description here.</p>
+      <p class="wd-section__desc">Digital illustrations and visual art. <br> <br> <strong> @project.soda </strong> is my archive of personal work and creative explorations, which has also been featured at various art markets and creative events. ☆</p>
+      <div class="rel-links">
+        <button class="rel-links__btn">relevant links ↗</button>
+        <div class="rel-links__panel">
+          <a href="https://www.instagram.com/project.soda/" class="rel-links__item" target="_blank" rel="noopener"><span>@project.soda on Instagram</span><span class="rel-links__arrow">↗</span></a>
+          <a href="#" class="rel-links__item" target="_blank" rel="noopener"><span>Commission Info</span><span class="rel-links__arrow">↗</span></a>
+        </div>
+      </div>
     </div>
     <div class="wd-gallery" data-gallery="illustrations">
       <div class="wd-gallery__track">
         <div class="wd-slide" data-index="0"><img src="./projects/illu/illu1.JPG" alt="" class="wd-img" /></div>
-        <div class="wd-slide" data-index="1"><img src="./projects/illu/illu2.JPG" alt="" class="wd-img" /></div>
+        <div class="wd-slide" data-index="1"><img src="./projects/illu/illu2.png" alt="" class="wd-img" /></div>
         <div class="wd-slide" data-index="2"><img src="./projects/illu/illu3.JPG" alt="" class="wd-img" /></div>
+        <div class="wd-slide" data-index="2"><img src="./projects/illu/illu4.png" alt="" class="wd-img" /></div>
+        <div class="wd-slide" data-index="2"><img src="./projects/illu/illu5.png" alt="" class="wd-img" /></div>
+        <div class="wd-slide" data-index="2"><img src="./projects/illu/illu6.png" alt="" class="wd-img" /></div>
+
+
+
       </div>
       <button class="wd-gallery__btn wd-gallery__btn--prev">&#10094;</button>
       <button class="wd-gallery__btn wd-gallery__btn--next">&#10095;</button>
@@ -130,7 +267,15 @@
   <section class="wd-section wd-section--dark" id="photography" data-theme="dark">
     <div class="wd-section__info">
       <h2 class="wd-section__title">photography</h2>
-      <p class="wd-section__desc">Event and lifestyle photography. Add your description here.</p>
+      <p class="wd-section__desc"><strong> Event and lifestyle photography. </strong> <br> <br> Both professional camera work to mobile/phone content.</p>
+      <div class="rel-links">
+        <button class="rel-links__btn">relevant links ↗</button>
+        <div class="rel-links__panel">
+          <a href="https://www.facebook.com/share/p/1VRKsosf5w/" class="rel-links__item" target="_blank" rel="noopener"><span>We Can't Relate 3rd anniversary</span><span class="rel-links__arrow">↗</span></a>
+          <a href="https://www.facebook.com/share/p/1DDSj4qi9q/" class="rel-links__item" target="_blank" rel="noopener"><span>Apl.de.Ap at Huckleberry</span><span class="rel-links__arrow">↗</span></a>
+          <a href="https://www.facebook.com/share/p/1CytW9gaWm/" class="rel-links__item" target="_blank" rel="noopener"><span>Hulma Pottery Studio archive</span><span class="rel-links__arrow">↗</span></a>
+        </div>
+      </div>
     </div>
     <div class="wd-gallery" data-gallery="photography">
       <div class="wd-gallery__track">
@@ -150,13 +295,33 @@
   <section class="wd-section wd-section--light" id="events" data-theme="light">
     <div class="wd-section__info">
       <h2 class="wd-section__title">events and management</h2>
-      <p class="wd-section__desc">Event coordination, promotional design, and social media management for live events. Add your description here.</p>
+      <p class="wd-section__desc"><strong>A little bit of everything behind live events!</strong> <br> <br> concept and planning, client communication, merchant curation, promotional design, and social media handling.</p>
+      <div class="rel-links">
+        <button class="rel-links__btn">relevant links ↗</button>
+        <div class="rel-links__panel">
+          <a href="https://www.facebook.com/share/p/14keZdTMxQ3/" class="rel-links__item" target="_blank" rel="noopener"><span>Odd Neighbors</span><span class="rel-links__arrow">↗</span></a>
+          <a href="https://www.instagram.com/p/DHTauv_zFmM/" class="rel-links__item" target="_blank" rel="noopener"><span>Grrrl's Night 2</span><span class="rel-links__arrow">↗</span></a>
+          <a href="https://www.facebook.com/share/p/18pJnYKmLb/" class="rel-links__item" target="_blank" rel="noopener"><span>SPIT! at Ayala Malls Abreeze 2024</span><span class="rel-links__arrow">↗</span></a>
+          <a href="https://www.facebook.com/share/p/1B2NwtFmca/" class="rel-links__item" target="_blank" rel="noopener"><span>SPIT! at Ayala Malls Abreeze 2025</span><span class="rel-links__arrow">↗</span></a>
+
+
+          
+
+        </div>
+      </div>
     </div>
     <div class="wd-gallery" data-gallery="events">
       <div class="wd-gallery__track">
         <div class="wd-slide" data-index="0"><img src="./projects/event/event1.png" alt="" class="wd-img" /></div>
         <div class="wd-slide" data-index="1"><img src="./projects/event/event2.png" alt="" class="wd-img" /></div>
         <div class="wd-slide" data-index="2"><img src="./projects/event/event3.png" alt="" class="wd-img" /></div>
+        <div class="wd-slide" data-index="2"><img src="./projects/event/event4.png" alt="" class="wd-img" /></div>
+        <div class="wd-slide" data-index="2"><img src="./projects/event/event5.png" alt="" class="wd-img" /></div>
+        <div class="wd-slide" data-index="2"><img src="./projects/event/event7.png" alt="" class="wd-img" /></div>
+        <div class="wd-slide" data-index="2"><img src="./projects/event/event8.png" alt="" class="wd-img" /></div>
+        <div class="wd-slide" data-index="2"><img src="./projects/event/event9.png" alt="" class="wd-img" /></div>
+
+
       </div>
       <button class="wd-gallery__btn wd-gallery__btn--prev">&#10094;</button>
       <button class="wd-gallery__btn wd-gallery__btn--next">&#10095;</button>
@@ -168,18 +333,38 @@
   <section class="wd-section wd-section--dark" id="video" data-theme="dark">
     <div class="wd-section__info">
       <h2 class="wd-section__title">video editing</h2>
-      <p class="wd-section__desc">Video editing and motion content. Add your description here.</p>
+      <p class="wd-section__desc">Video editing for social media, with experience supporting larger-scale productions through editing and production coordination. <br> <br> <strong> See the relevant links for sample work.</strong></p>
+      <div class="rel-links">
+        <button class="rel-links__btn">relevant links ↗</button>
+        <div class="rel-links__panel">
+          <a href="https://www.instagram.com/chiangmai.superstar/" class="rel-links__item" target="_blank" rel="noopener"><span>Chiang Mai Superstar</span><span class="rel-links__arrow">↗</span></a>
+          <a href="https://www.instagram.com/reel/DEkHqfrSqrF/" class="rel-links__item" target="_blank" rel="noopener"><span>Team True Social Hiring Ad</span><span class="rel-links__arrow">↗</span></a>
+          <a href="https://www.instagram.com/reel/DQwJXcbj0Ey/" class="rel-links__item" target="_blank" rel="noopener"><span>Huckleberry Halloween Event</span><span class="rel-links__arrow">↗</span></a>
+          <a href="https://www.instagram.com/reel/DWOUfxKEqKQ/" class="rel-links__item" target="_blank" rel="noopener"><span>Ayala Malls Abreeza Women's Month</span><span class="rel-links__arrow">↗</span></a>
+
+        </div>
+      </div>
     </div>
     <div class="wd-gallery" data-gallery="video">
       <div class="wd-gallery__track">
-        <div class="wd-slide" data-index="0"><div class="wd-img wd-placeholder wd-placeholder--dark">placeholder</div></div>
-        <div class="wd-slide" data-index="1"><div class="wd-img wd-placeholder wd-placeholder--dark">placeholder</div></div>
-        <div class="wd-slide" data-index="2"><div class="wd-img wd-placeholder wd-placeholder--dark">placeholder</div></div>
+        <div class="wd-slide" data-index="0">
+          <video class="wd-video" muted loop playsinline preload="metadata">
+            <source src="./projects/videos/vid1.MP4" type="video/mp4" />
+          </video>
+        </div>
+        <div class="wd-slide" data-index="1">
+          <video class="wd-video" muted loop playsinline preload="metadata">
+            <source src="./projects/videos/vid2.MP4" type="video/mp4" />
+          </video>
+        </div>
+        </div>
       </div>
       <button class="wd-gallery__btn wd-gallery__btn--prev">&#10094;</button>
       <button class="wd-gallery__btn wd-gallery__btn--next">&#10095;</button>
       <div class="wd-gallery__counter"></div>
     </div>
+
+
   </section>
 
   <!-- ===== LIGHTBOX ===== -->
@@ -188,6 +373,9 @@
     <button class="wd-lightbox__arrow wd-lightbox__arrow--left" id="wdLightboxPrev">&#10094;</button>
     <div class="wd-lightbox__stage">
       <img src="" alt="" id="wdLightboxImg" />
+      <video id="wdLightboxVideo" controls playsinline style="display:none">
+        <source src="" type="video/mp4" />
+      </video>
     </div>
     <button class="wd-lightbox__arrow wd-lightbox__arrow--right" id="wdLightboxNext">&#10095;</button>
     <div class="wd-lightbox__counter" id="wdLightboxCounter"></div>

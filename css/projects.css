@@ -63,6 +63,7 @@
     font-size: 1.25rem;
     line-height: 1.7;
     max-width: 38ch;
+    text-align: justify;
   }
   
   .proj-header__nav {

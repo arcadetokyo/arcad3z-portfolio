@@ -53,6 +53,8 @@
   align-items: center;
   padding: 6rem var(--section-padding-x);
   scroll-margin-top: 0;
+  position: relative;
+  overflow: hidden;
 }
 
 .wd-section--dark {
@@ -86,8 +88,8 @@
 .wd-section__desc {
   font-size: 1rem;
   line-height: 1.7;
-  max-width: 34ch;
   opacity: 0.75;
+  text-align: left;
 }
 
 .wd-section--dark .wd-section__desc { color: var(--cream); }
@@ -344,14 +346,14 @@
    VIDEO SLIDES — portrait 9:16
 ============================ */
 .wd-video {
-  width: 180px;
-  height: 320px; /* portrait, same height as wd-img */
+  width: 260px;
+  height: 462px; /* 9:16 portrait */
   object-fit: cover;
   border-radius: 16px;
   display: block;
   background-color: #000;
   outline: none;
-  pointer-events: none; /* carousel handles clicks via the slide wrapper */
+  pointer-events: none;
 }
 
 .wd-section--dark .wd-video {

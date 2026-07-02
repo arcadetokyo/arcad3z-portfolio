@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact — Pepper Piccio</title>
+  <link rel="stylesheet" href="./css/style.css" />
+  <style>
+    /* ===== CONTACT PAGE ===== */
+    .connect-page {
+      min-height: 100vh;
+      padding: 3rem var(--section-padding-x) 4rem;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Big title */
+    .connect-title {
+      font-family: 'Inter', sans-serif;
+      font-weight: 900;
+      color: var(--navy);
+      font-size: clamp(5rem, 15vw, 12rem);
+      line-height: 0.9;
+      letter-spacing: -0.02em;
+      margin-bottom: 3rem;
+      display: inline-block;
+      animation: idle-sway 5s ease-in-out infinite;
+    }
+
+    /* Two-column body */
+    .connect-body {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem 4rem;
+      align-items: center;
+      flex: 1;
+    }
+
+    /* ===== LEFT: Portrait (reuses hero logic) ===== */
+    .connect-portrait {
+      position: relative;
+      width: 420px;
+      height: 300px;
+    }
+
+    .connect-doodle {
+      position: absolute;
+      left: 20px;
+      top: 0;
+      width: 270px;
+      z-index: 2;
+      cursor: none;
+      transition: transform 0.5s ease;
+    }
+
+    .connect-doodle:hover {
+      animation: shake 0.5s ease;
+    }
+
+    .connect-blob {
+      position: absolute;
+      left: 215px;
+      top: 35px;
+      width: 140px;
+      height: 140px;
+      background-color: var(--pink);
+      border-radius: 50%;
+      z-index: 1;
+    }
+
+    .connect-photo {
+      position: absolute;
+      right: -20px;
+      bottom: 10px;
+      width: 185px;
+      height: 185px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 6px solid var(--navy);
+      z-index: 3;
+      cursor: none;
+      transition: transform 0.5s ease, box-shadow 0.3s ease;
+    }
+
+    .connect-photo:hover {
+      animation: shake 0.5s ease;
+      box-shadow: 0 14px 28px rgba(255, 199, 242, 0.7);
+    }
+
+    /* ===== RIGHT: Info + buttons ===== */
+    .connect-info {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 0.5rem;
+    }
+
+    .connect-identity {
+      text-align: right;
+      margin-bottom: 3.5rem;
+    }
+
+    .connect-name {
+      font-family: 'Inter', sans-serif;
+      font-weight: 800;
+      font-size: clamp(1.4rem, 2.5vw, 2rem);
+      color: var(--black);
+      margin-bottom: 0.6rem;
+    }
+
+    /* Email wrap holds the pill + hint together */
+    .connect-email-wrap {
+      position: relative;
+      display: inline-block;
+    }
+
+    .connect-email {
+      font-family: 'Inter', sans-serif;
+      font-weight: 700;
+      font-size: clamp(0.9rem, 1.5vw, 1.1rem);
+      color: var(--black);
+      text-decoration: none;
+      padding: 0.5rem 1.1rem;
+      border-radius: 999px;
+      display: inline-block;
+      transition: background-color 0.35s ease, color 0.35s ease, transform 0.3s ease;
+    }
+
+    .connect-email:hover {
+      background-color: var(--navy);
+      color: var(--cream);
+      transform: translateY(-2px);
+    }
+
+    /* Whimsical popup hint — appears upper-right on hover */
+    .connect-hint {
+      position: absolute;
+      bottom: -2.4rem;
+      right: -2rem;
+      font-family: 'Inter', sans-serif;
+      font-weight: 700;
+      font-size: 0.78rem;
+      background-color: var(--pink);
+      color: var(--navy);
+      padding: 0.4rem 0.9rem;
+      border-radius: 999px;
+      white-space: nowrap;
+      pointer-events: none;
+      transform: rotate(-9deg) translateY(8px);
+      opacity: 0;
+      transition: opacity 0.3s ease, transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+      box-shadow: 0 4px 14px rgba(255, 199, 242, 0.5);
+    }
+
+    .connect-email-wrap:hover .connect-hint {
+      opacity: 1;
+      transform: rotate(-9deg) translateY(0);
+      animation: hint-pop 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) both,
+                 hint-wobble 2s ease-in-out 0.4s infinite;
+    }
+
+    @keyframes hint-pop {
+      0%   { transform: rotate(-9deg) translateY(-8px) scale(0.7); opacity: 0; }
+      100% { transform: rotate(-9deg) translateY(0)    scale(1);   opacity: 1; }
+    }
+
+    @keyframes hint-wobble {
+      0%,  100% { transform: rotate(-9deg)  translateY(0); }
+      30%        { transform: rotate(-13deg) translateY(-3px); }
+      60%        { transform: rotate(-6deg)  translateY(2px); }
+    }
+
+    /* 2x2 button grid */
+    .connect-btns {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0.85rem;
+    }
+
+    .connect-btn {
+      font-family: 'Inter', sans-serif;
+      font-weight: 700;
+      font-size: 1rem;
+      letter-spacing: 0.02em;
+      padding: 1rem 2rem;
+      border-radius: 999px;
+      border: none;
+      cursor: none;
+      text-decoration: none;
+      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 180px;
+      transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1),
+                  box-shadow 0.3s ease,
+                  background-color 0.3s ease;
+    }
+
+    .connect-btn--dark {
+      background-color: var(--black);
+      color: var(--cream);
+    }
+
+    .connect-btn--dark:hover {
+      transform: translateY(-5px) scale(1.04);
+      box-shadow: 0 14px 28px rgba(30, 30, 30, 0.3);
+      background-color: #333;
+    }
+
+    .connect-btn--home {
+      background-color: var(--navy);
+      color: var(--cream);
+    }
+
+    .connect-btn--home:hover {
+      transform: translateY(-5px) scale(1.04);
+      box-shadow: 0 14px 28px rgba(2, 16, 143, 0.4);
+      background-color: #0318b5;
+    }
+
+    /* ===== MOBILE ===== */
+    @media (max-width: 900px) {
+      .connect-body {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+      }
+
+      .connect-portrait {
+        width: 320px;
+        height: 240px;
+      }
+
+      .connect-info {
+        align-items: flex-start;
+      }
+
+      .connect-identity { text-align: left; }
+
+      .connect-title {
+        font-size: clamp(4rem, 18vw, 8rem);
+      }
+    }
+
+    @media (max-width: 480px) {
+      .connect-btns {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <canvas id="bgCanvas" class="bg-fx"></canvas>
+
+  <div class="page-loader" id="pageLoader">
+    <h1 class="page-loader__text" data-text="CONNECT!">CONNECT!</h1>
+  </div>
+
+  <main class="connect-page">
+
+    <!-- Big heading -->
+    <h1 class="connect-title reveal">CONNECT!</h1>
+
+    <!-- Two-column body -->
+    <div class="connect-body">
+
+      <!-- Left: portrait group (same as landing page) -->
+      <div class="connect-portrait reveal">
+        <img src="./assets/icons/selfportrait.png" alt="" class="connect-doodle" />
+        <span class="connect-blob"></span>
+        <img src="./assets/images/self.png" alt="Pepper Piccio" class="connect-photo" />
+      </div>
+
+      <!-- Right: name, email, buttons -->
+      <div class="connect-info reveal">
+        <div class="connect-identity">
+          <p class="connect-name">PEPPER PICCIO</p>
+          <div class="connect-email-wrap">
+            <a href="mailto:pepperpiccio@gmail.com" class="connect-email">pepperpiccio@gmail.com</a>
+            <span class="connect-hint">send a message!</span>
+          </div>
+        </div>
+
+        <div class="connect-btns">
+          <a href="https://github.com/arcadetokyo" class="connect-btn connect-btn--dark" target="_blank" rel="noopener">github</a>
+          <a href="https://www.linkedin.com/in/frances-piccio-6970ab299/" class="connect-btn connect-btn--dark" target="_blank" rel="noopener">linkedin</a>
+          <a href="#" class="connect-btn connect-btn--dark" target="_blank" rel="noopener">socials</a>
+          <a href="./index.html" class="connect-btn connect-btn--home">home</a>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <script src="./js/script.js"></script>
+</body>
+</html>

@@ -1,7 +1,7 @@
 // Smooth scroll for in-page nav links (get started section, footer links, etc.)
 document.addEventListener('DOMContentLoaded', () => {
-    initPageLoader();
-    initBackgroundFX();
+  initPageLoader();
+  setTimeout(initBackgroundFX, 400);
   
     const links = document.querySelectorAll('a[href^="#"]');
   
@@ -30,10 +30,16 @@ document.addEventListener('DOMContentLoaded', () => {
           }
         });
       },
-      { threshold: 0.15 }
-    );
+      { threshold: 0.1, rootMargin: '0px 0px -20px 0px' }    );
   
-    revealEls.forEach((el) => observer.observe(el));
+    revealEls.forEach((el) => {
+    const rect = el.getBoundingClientRect();
+    if (rect.top < window.innerHeight) {
+      el.classList.add('is-visible');
+    } else {
+      observer.observe(el);
+    }
+  });
   
     // ---- Pink star cursor with trail ----
     initStarCursor();

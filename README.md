@@ -1,4 +1,4 @@
-☆ [for portfolio] **(https://arcadetokyo.github.io/arcad3z-portfolio/)**
+☆ **live at:** (https://arcadetokyo.github.io/arcad3z-portfolio/)
 
 built with HTML, CSS, and vanilla JavaScript. 
 bo frameworks or external libraries — lightweight by choice, with all interactions written from scratch.

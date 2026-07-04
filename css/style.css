@@ -425,41 +425,26 @@ img {
    MOBILE
 ============================ */
 @media (max-width: 768px) {
-  :root {
-    --section-padding-x: 1.5rem;
-  }
+  :root { --section-padding-x: 1.25rem; }
 
-  .hero {
-    padding-top: 3rem;
-    padding-bottom: 3rem;
-  }
+  .hero { padding-top: 2rem; padding-bottom: 2rem; }
+  .hero__title { font-size: clamp(3rem, 14vw, 5rem); margin-bottom: 2rem; }
+  .hero__profile { flex-direction: column; align-items: flex-start; gap: 2rem; }
+  .hero__portrait-wrap { width: 100%; max-width: 300px; height: 210px; margin-left: 0; }
+  .hero__doodle { width: 170px; left: 0; top: 0; }
+  .hero__blob { width: 100px; height: 100px; left: 145px; top: 20px; }
+  .hero__photo { width: 125px; height: 125px; right: 0; bottom: 5px; border-width: 4px; }
+  .hero__name { font-size: 1.2rem; }
+  .hero__skills { text-align: left; font-size: 0.78rem; }
 
-  .hero__title {
-    margin-bottom: 3rem;
-  }
-
-  .hero__profile {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 2.5rem;
-  }
-
-  .hero__skills {
-    text-align: left;
-  }
-
-  .get-started__top {
-    margin-bottom: 3rem;
-  }
-
-  .get-started__grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 2.5rem 1.5rem;
-  }
+  .get-started__top { flex-direction: column; align-items: flex-start; gap: 1rem; margin-bottom: 2rem; }
+  .get-started__title { font-size: clamp(1.6rem, 7vw, 2.5rem); }
+  .get-started__grid { grid-template-columns: repeat(2, 1fr); gap: 2rem 1rem; }
+  .get-started__icon { max-width: 140px; }
+  .dot { width: 28px; height: 28px; }
 }
 
 @media (max-width: 420px) {
-  .get-started__grid {
-    grid-template-columns: 1fr;
-  }
+  .get-started__grid { grid-template-columns: repeat(2, 1fr); gap: 1.5rem 0.5rem; }
+  .get-started__icon { max-width: 110px; }
 }

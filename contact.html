@@ -221,32 +221,23 @@
 
     /* ===== MOBILE ===== */
     @media (max-width: 900px) {
-      .connect-body {
-        grid-template-columns: 1fr;
-        gap: 3rem;
-      }
+  .connect-page { padding: 2rem 1.25rem 3rem; }
+  .connect-title { font-size: clamp(3rem, 16vw, 6rem); margin-bottom: 2rem; }
+  .connect-body { grid-template-columns: 1fr; gap: 2.5rem; }
+  .connect-portrait { width: 100%; max-width: 300px; height: 210px; }
+  .connect-doodle { width: 170px; }
+  .connect-blob { width: 100px; height: 100px; left: 145px; top: 20px; }
+  .connect-photo { width: 125px; height: 125px; right: 0; border-width: 4px; }
+  .connect-info { align-items: flex-start; }
+  .connect-identity { text-align: left; }
+  .connect-btns { grid-template-columns: 1fr 1fr; }
+  .connect-btn { min-width: unset; padding: 0.85rem 1.2rem; font-size: 0.9rem; }
+}
 
-      .connect-portrait {
-        width: 320px;
-        height: 240px;
-      }
-
-      .connect-info {
-        align-items: flex-start;
-      }
-
-      .connect-identity { text-align: left; }
-
-      .connect-title {
-        font-size: clamp(4rem, 18vw, 8rem);
-      }
-    }
-
-    @media (max-width: 480px) {
-      .connect-btns {
-        grid-template-columns: 1fr;
-      }
-    }
+@media (max-width: 420px) {
+  .connect-btns { grid-template-columns: 1fr; }
+  .connect-title { font-size: clamp(2.5rem, 16vw, 4rem); }
+}
   </style>
 </head>
 <body>

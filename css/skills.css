@@ -296,29 +296,21 @@
      MOBILE
   ============================ */
   @media (max-width: 900px) {
-    .skills-header__grid {
-      grid-template-columns: 1fr;
-      gap: 3rem 0;
-    }
-  
-    .skills-header__divider {
-      display: none;
-    }
-  
-    .skills-nav {
-      grid-template-columns: repeat(2, 1fr);
-      gap: 1.5rem;
-      margin-top: 2.5rem;
-    }
-  
-    .certs__list {
-      margin-left: 0;
-      max-width: 100%;
-    }
+    .skills-header__grid { grid-template-columns: 1fr; gap: 2rem 0; }
+    .skills-header__divider { display: none; }
+    .skills-header__title { font-size: clamp(2.5rem, 12vw, 4rem); }
+    .skills-header__exp-title { font-size: clamp(2.5rem, 12vw, 4rem); }
+    .proj-header__stack { flex-direction: column; gap: 0; }
+    .software-grid { grid-template-columns: repeat(4, 56px); }
+    .skills-nav { grid-template-columns: repeat(2, 1fr); gap: 1.5rem; margin-top: 2rem; }
+    .skills-nav__icon { max-width: 100px; }
+    .certs__list { margin-left: 0; max-width: 100%; }
+    .cert-card { padding: 1.1rem 1.4rem; border-radius: 14px; }
+    .cert-card__name { font-size: 0.95rem; }
   }
   
   @media (max-width: 480px) {
-    .skills-nav {
-      grid-template-columns: repeat(2, 1fr);
-    }
+    .skills-header__stack { flex-direction: column; gap: 0; }
+    .software-grid { grid-template-columns: repeat(3, 56px); }
+    .certs__title { font-size: clamp(2rem, 12vw, 3rem); }
   }

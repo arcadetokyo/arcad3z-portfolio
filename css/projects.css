@@ -384,45 +384,26 @@
      MOBILE
   ============================ */
   @media (max-width: 900px) {
-    .proj-header__grid {
-      grid-template-columns: 1fr;
-    }
+    .proj-header__grid { grid-template-columns: 1fr; }
+    .proj-header__title { font-size: clamp(2.5rem, 12vw, 4rem); }
+    .proj-header__nav { grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
+    .proj-nav__icon { max-width: 100px; }
   
-    .proj-nav {
-      justify-content: center;
-      gap: 2.5rem;
-    }
+    .project, .project--alt { grid-template-columns: 1fr; }
+    .project--alt .project__gallery { order: 0; }
+    .project--alt .project__info { order: 1; }
+    .project__title { font-size: clamp(1.8rem, 8vw, 2.5rem); }
   
-    .project,
-    .project--alt {
-      grid-template-columns: 1fr;
-    }
+    .project__gallery--phone { grid-template-columns: repeat(3, 1fr); gap: 0.5rem; }
   
-    .project--alt .project__gallery {
-      order: 0;
-    }
+    .lightbox__arrow { width: 40px; height: 40px; font-size: 1rem; }
+    .lightbox__arrow--left { left: 0.75rem; }
+    .lightbox__arrow--right { right: 0.75rem; }
+    .lightbox__close { top: 1rem; right: 1rem; font-size: 1.8rem; }
+  }
   
-    .project--alt .project__info {
-      order: 1;
-    }
-  
-    .project__gallery--phone {
-      grid-template-columns: repeat(3, 1fr);
-      gap: 0.6rem;
-    }
-  
-    .lightbox__arrow {
-      width: 44px;
-      height: 44px;
-      font-size: 1.1rem;
-    }
-  
-    .lightbox__arrow--left { left: 1rem; }
-    .lightbox__arrow--right { right: 1rem; }
-  
-    .lightbox__close {
-      top: 1.2rem;
-      right: 1.2rem;
-      font-size: 2rem;
-    }
+  @media (max-width: 480px) {
+    .proj-header__stack { flex-direction: column; gap: 0; }
+    .proj-header__stack ul { font-size: 1rem; }
+    .project__gallery--phone { grid-template-columns: repeat(2, 1fr); }
   }

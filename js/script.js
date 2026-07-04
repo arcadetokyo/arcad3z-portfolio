@@ -66,7 +66,7 @@ document.addEventListener('DOMContentLoaded', () => {
   
     document.body.style.overflow = 'hidden';
   
-    const totalTime = rawText.length * letterDelay + letterDuration + 380; // small hold before fading out
+    const totalTime = rawText.length * letterDelay + letterDuration + 340; // small hold before fading out
   
     setTimeout(() => {
       loader.classList.add('is-hidden');

@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', () => {
           if (entry.isIntersecting) {
             setTimeout(() => {
               entry.target.classList.add('is-visible');
-            }, i * 80); // slight stagger when multiple items reveal together
+            }, i * 80); 
             observer.unobserve(entry.target);
           }
         });
@@ -64,15 +64,14 @@ document.addEventListener('DOMContentLoaded', () => {
       textEl.appendChild(span);
     });
   
-    // Lock scroll while the intro plays
     document.body.style.overflow = 'hidden';
   
-    const totalTime = rawText.length * letterDelay + letterDuration + 350; // small hold before fading out
+    const totalTime = rawText.length * letterDelay + letterDuration + 380; // small hold before fading out
   
     setTimeout(() => {
       loader.classList.add('is-hidden');
       document.body.style.overflow = '';
-      setTimeout(() => loader.remove(), 650); // remove from DOM after fade transition completes
+      setTimeout(() => loader.remove(), 650);
     }, totalTime);
   }
   
@@ -94,8 +93,6 @@ document.addEventListener('DOMContentLoaded', () => {
     resize();
     window.addEventListener('resize', resize);
   
-    // Layered sine terms standing in for cheap noise — combining a few different
-    // frequencies/phases breaks up any perfectly regular, "uniform" repetition.
     function noise(x, seed, t) {
       return (
         Math.sin(x * 0.004 * seed + t * 0.6 + seed) * 0.5 +
@@ -104,11 +101,9 @@ document.addEventListener('DOMContentLoaded', () => {
       );
     }
   
-    const dotSpacingX = 6; // how far apart each vertical "column" of dots is
-    const dotsPerColumn = 6; // how many dots stacked per column, forming each band's thickness
-  
-    // Multiple overlapping bands at different heights/seeds create layered depth
-    // instead of one flat lump — like several smoke trails drifting past each other.
+    const dotSpacingX = 6; 
+    const dotsPerColumn = 6; 
+
     const bands = [
       { yFrac: 0.42, seedOffset: 0, thicknessBase: 50 },
       { yFrac: 0.58, seedOffset: 17, thicknessBase: 42 },
@@ -123,10 +118,8 @@ document.addEventListener('DOMContentLoaded', () => {
         const s = band.seedOffset;
   
         for (let x = 0; x <= width; x += dotSpacingX) {
-          // The collective lump's centerline drifts vertically and horizontally over time
           const centerY = centerBase + noise(x, 1 + s, time) * height * 0.12;
   
-          // Thickness of the blob itself varies along x — not a uniform band width
           const thickness = band.thicknessBase + noise(x + 800 + s * 50, 1.4 + s, time * 0.8) * 40;
           const safeThickness = Math.max(20, thickness);
   
@@ -139,12 +132,10 @@ document.addEventListener('DOMContentLoaded', () => {
             const y = centerY + offset;
             const drawX = x + jitterX;
   
-            // Depth illusion: dots nearer the band's core read as "closer" — bigger and more opaque;
-            // dots near the edges fade and shrink, like the lump has real volume rather than being flat.
             const normalizedOffset = Math.abs(offset) / (safeThickness / 2);
             const depth = Math.max(0, 1 - Math.min(1, normalizedOffset));
   
-            const radius = 0.4 + depth * 1.3; // smaller dots overall than before
+            const radius = 0.4 + depth * 1.3; 
             const alpha = 0.025 + depth * 0.08;
   
             if (drawX < -10 || drawX > width + 10 || y < -10 || y > height + 10) continue;
@@ -159,7 +150,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   
     if (prefersReducedMotion) {
-      // Respect reduced-motion preference: render a single static frame, no loop
       drawFrame();
       return;
     }
@@ -168,7 +158,6 @@ document.addEventListener('DOMContentLoaded', () => {
   
     function loop() {
       frameCount++;
-      // Render at roughly half the browser's refresh rate to keep this lightweight
       if (frameCount % 2 === 0) {
         time += 0.012;
         drawFrame();
@@ -180,7 +169,6 @@ document.addEventListener('DOMContentLoaded', () => {
   }
   
   function initStarCursor() {
-    // Skip on touch devices — no real cursor to track
     if (window.matchMedia('(pointer: coarse)').matches) return;
   
     const STAR_SVG = `
@@ -198,7 +186,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let mouseX = 0;
     let mouseY = 0;
     let lastTrailTime = 0;
-    const TRAIL_INTERVAL = 60; // ms between spawned trail stars
+    const TRAIL_INTERVAL = 30; // ms between spawned trail stars
   
     document.addEventListener('mousemove', (e) => {
       mouseX = e.clientX;

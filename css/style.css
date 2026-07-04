@@ -288,7 +288,7 @@ img {
   100% { transform: scale(1.18) rotate(0deg); }
 }
 
-/* PILL hover — replaces the old underline ::after trick */
+/* PILL hover  */
 .get-started__item span {
   font-family: var(--font-display);
   font-weight: 700;

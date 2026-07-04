@@ -99,7 +99,7 @@
     filter: drop-shadow(0 24px 32px rgba(180, 180, 180, 0.6));
   }
   
-  /* PILL hover - no underline */
+  /* PILL hover */
   .proj-nav__item span {
     font-family: var(--font-display);
     font-weight: 700;

@@ -47,7 +47,6 @@ document.addEventListener('DOMContentLoaded', () => {
       renderImage();
     }
   
-    // Wire up each gallery section independently so prev/next only cycle within that project's set
     document.querySelectorAll('[data-gallery]').forEach((section) => {
       const images = Array.from(section.querySelectorAll('.gallery-img'));
   
@@ -62,7 +61,6 @@ document.addEventListener('DOMContentLoaded', () => {
     lightboxNext.addEventListener('click', showNext);
     lightboxPrev.addEventListener('click', showPrev);
   
-    // Click outside the image (on the dark backdrop) also closes
     lightbox.addEventListener('click', (e) => {
       if (e.target === lightbox) closeLightbox();
     });

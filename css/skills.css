@@ -27,7 +27,7 @@
     animation: idle-sway 5s ease-in-out infinite;
   }
   
-  /* Skill pills — outlined, not filled */
+  /* Skill pills */
   .skills-pills {
     display: flex;
     flex-direction: column;
@@ -222,7 +222,7 @@
     margin-right: 0;
   }
   
-  /* Cert cards — alternating navy and dark like the reference */
+  /* Cert cards */
   .cert-card {
     display: flex;
     justify-content: space-between;

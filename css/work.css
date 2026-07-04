@@ -1,5 +1,5 @@
 /* ============================
-   BACK BUTTON — fixed, hidden until sections appear
+   BACK BUTTON
 ============================ */
 .wd-back {
   position: fixed;
@@ -121,7 +121,6 @@
 .wd-section--dark .wd-gallery__placeholder { color: var(--cream); }
 .wd-section--light .wd-gallery__placeholder { color: var(--black); }
 
-/* The track holds all slides positioned absolutely */
 .wd-gallery__track {
   position: relative;
   width: 360px;
@@ -130,8 +129,6 @@
   align-items: center;
   justify-content: center;
 }
-
-/* Each slide is absolutely positioned for coverflow */
 .wd-slide {
   position: absolute;
   cursor: none;
@@ -343,13 +340,13 @@
 ============================ */
 .wd-video {
   width: 180px;
-  height: 320px; /* portrait, same height as wd-img */
+  height: 320px;
   object-fit: cover;
   border-radius: 16px;
   display: block;
   background-color: #000;
   outline: none;
-  pointer-events: none; /* carousel handles clicks via the slide wrapper */
+  pointer-events: none; 
 }
 
 .wd-section--dark .wd-video {
@@ -360,7 +357,7 @@
   box-shadow: 0 16px 40px rgba(2, 16, 143, 0.18);
 }
 
-/* Lightbox video — taller to respect portrait ratio */
+/* Lightbox video */
 #wdLightboxVideo {
   max-width: 50vw;
   max-height: 85vh;

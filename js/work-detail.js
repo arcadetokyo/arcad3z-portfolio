@@ -56,7 +56,6 @@ function initGalleries() {
         slide.style.pointerEvents = abs <= 2 ? 'auto' : 'none';
         slide.dataset.distance   = d;
 
-        // Pause any video in the carousel — only plays in the lightbox
         const video = slide.querySelector('video');
         if (video) video.pause();
       });
@@ -235,7 +234,6 @@ function initRelevantLinks() {
       document.querySelectorAll('.rel-links__panel.is-open').forEach(p => {
         p.classList.remove('is-open');
       });
-      // Toggle this one
       if (!isOpen) panel.classList.add('is-open');
     });
   });

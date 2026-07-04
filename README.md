@@ -3,7 +3,7 @@
 built with HTML, CSS, and vanilla JavaScript. 
 bo frameworks or external libraries — lightweight by choice, with all interactions written from scratch.
 
-☆ *how it's structured*
+☆ *how it's structured:*
 
 ★ index.html — landing
 ★ projects.html — dev and cs projects
@@ -17,7 +17,7 @@ bo frameworks or external libraries — lightweight by choice, with all interact
 ★ projects/ — project media organized by category
 
 
-☆ *to run locally*
+☆ *to run locally:*
 
 git clone https://github.com/arcadetokyo/arcad3z.git
 cd arcad3z
